@@ -1,0 +1,39 @@
+/* Universal Selector */
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Type Selector */
+h1 {
+    color: blue;
+}
+
+h3 {
+    color: green;
+}
+
+
+/* ID Selector */
+#para {
+    color: red;
+}
+
+/* Class Selector */
+.highlight {
+    background-color: yellow;
+}
+
+/* Group Selector */
+h1, h2 ,h3{
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+}
+
+/* Attribute Selector */
+p[class="line"] {
+    font-size: 18px;
+    background-color: lightcyan;
+
+}
+

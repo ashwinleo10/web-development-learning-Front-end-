@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM in JavaScript</h1>
+    <h1>There are many get element and query</h1>
+    <p id="element">get element by id</p>
+    <p class="cname">get elements by class name</p>
+    <p class="cname">this for class name</p>
+    <p name="para">get elements by name</p>
+    <p name="para">This is get by name</p>
+    <h3>query selector</h3>
+    <button onclick="change()"> Click mee </button>
+    <h4>query selector all</h4>
+    <h4>This is query selector all</h4>
+
+    <script>
+        //get by element id
+        document.getElementById("element").style.textAlign = "center";
+
+        //get by elements id
+        let byId = document.getElementsByClassName("cname");
+        for(let i=0; i<byId.length; i++) {
+            byId[i].style.color = "black";
+            byId[i].style.backgroundColor = "grey";
+        }
+
+        //get by tag name
+        let byTag = document.getElementsByTagName("h1");
+        for(let i =0; i<byTag.length; i++ ) {
+            byTag[i].style.color = "grey";
+            byTag[i].style.backgroundColor = "black";
+        }
+
+        //get by name
+        let byName = document.getElementsByName("para");
+        for(let i = 0; i <byName.length; i++) {
+            byName[i].style.color = "blue";
+            byName[i].style.backgroundColor = "black";
+        }
+
+        //query selector
+        document.querySelector("h3").innerHTML = "<h2>this is query selector</h2>";
+        document.querySelector("button").textContent = "Click mee to change";
+        
+        function change() {
+            let byclass = document.getElementsByTagName("h1");
+            for(let i=0; i<byclass.length; i++) {
+                byclass[i].style.textAlign = "center";
+            }
+        }
+
+        //query selector all
+        let h = document.querySelectorAll("h4");
+        h.forEach((h) => {h.style.backgroundColor="black"; h.style.color="white"; h.style.textAlign = "center"; });
+    </script>
+</body>
+</html>

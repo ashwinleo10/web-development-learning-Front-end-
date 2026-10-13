@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <Style>
+        #myDiv {
+            width: 200px;
+            height: 150px;
+            background-color: grey;
+        }
+    </Style>
+
+</head>
+<body>
+    <h2>Mouse events</h2>
+    <br>
+    <div id="myDiv"></div>
+
+    <br>
+    <input type="text">
+
+    <br>
+    <br>
+    <form>
+        <label>Enter name</label>
+        <br>
+        <input type="text" id="myInput">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        //Form Events
+        document.querySelector("form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Form Submitted");
+        })
+        document.querySelector('#myInput').addEventListener("focus", () => {
+            console.log("Input field focused");
+        })
+        document.querySelector('#myInput').addEventListener("blur", () => {
+            console.log("Input field lost focused");
+        })
+        document.querySelector('#myInput').addEventListener("change", (e) => {
+            console.log(`Input changed to: ${e.target.value}`);
+        })
+        document.querySelector('#myInput').addEventListener("input", (e) => {
+            console.log(`Input is: ${e.target.value}`);
+        })
+        
+        // Mouse Events
+        let box = document.getElementById("myDiv");
+        box.addEventListener("click", () => {
+            box.style.backgroundColor = "black";
+        })
+        box.addEventListener("dblclick", () => {
+            box.style.backgroundColor = "red";
+        })
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "blue";
+        })
+        box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "grey";
+        })
+        box.addEventListener("mousemove", (e) => {
+            box.innerText = `X value: ${e.offsetX} and Y value: ${e.offsetY}`
+        })
+
+        // Keyboard events
+        let i = document.querySelector("input");
+        i.addEventListener("keydown", (event) => {
+            console.log("Key pressed ", event.key);
+        })
+        i.addEventListener("keyup", (event) => {
+            console.log("Key relased ", event.key);
+        })
+        i.addEventListener("keypress", (event) => {
+            const pattern = /^[a-zA-Z]$/;
+            if (!pattern.test(event.key)) {
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>

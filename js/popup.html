@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Popup in Js</h1>
+    <h3>There are 3 popups available</h3>
+
+    <script>
+    alert('Hello! This is an alert popup.');
+    // Its shows a simple alert popup with a message.
+    let name = prompt('Please enter your name:'); alert('Hello, ' + name + '! Welcome to our website.');
+    // Its shows a popup with a text input field(field is always string) where the user can enter their name.
+    let res = confirm('Are you sure you want to proceed?');console.log(res);
+    // Its shows a popup with a message and two buttons (OK and Cancel). The user can choose to confirm or cancel the action.
+
+    // Do-while loop
+    let pin = 1234;
+
+    do {
+        pin = Number(prompt("Enter your pin: "));
+    } while (pin !== 1234);
+
+    document.write("Pin accepted! You are now logged in.");
+
+    </script>
+</body>
+</html>
