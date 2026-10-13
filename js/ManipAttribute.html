@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating Attribute</title>
+</head>
+<body>
+    <a href="https://www.youtube.com/">Click to visit Youtube</a>
+    <br>
+    <br>
+    <button onclick="setattr()">Set Attr</button>
+    <button onclick="getattr()">Get Attr</button>
+    <button onclick="removeattr()">Remove Attr</button>
+
+    <script>
+        let link = document.querySelector("a");
+        function setattr() {
+            link.setAttribute("href", "https://www.instagram.com/")
+            link.innerText = "click to visit Instagram";
+        }
+        function getattr() {
+            let url = link.getAttribute("href");
+            alert("The url is " + url);
+        }
+        function removeattr() {
+            let url = link.removeAttribute("href");
+            alert("The href attr is Removed");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassLists in JS</title>
+    <style>
+        .highlight {
+            background-color: grey;
+            color: black;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text">Hi...To Everyone,This is Ashwin</h1>
+    <button onclick="addstyle()">Add Style</button>
+    <button onclick="removeStyle()">Remove Style</button>
+    <button onclick="toggleStyle()">Toggle Style</button>
+    <button onclick="containStyle()">Contain Style</button>
+
+    <script>
+        txt = document.getElementById("text")
+        function addstyle() {
+            txt.classList.add("highlight");
+        }
+        function removeStyle() {
+            txt.classList.remove("highlight");
+        }
+        function toggleStyle() {
+            txt.classList.toggle("highlight");
+        }
+        function containStyle() {
+            if(txt.classList.contains("highlight")) {
+                alert("Highlight has been applied");
+            } else {
+                alert("Highlight has been not applied");
+            }
+        }
+    </script>
+</body>
+</html>

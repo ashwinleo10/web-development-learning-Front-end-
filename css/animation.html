@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body {
+            background-color:lightgray;
+            animation-name: changeColor;
+            animation-duration: 4s;
+        }
+        h1 {
+            animation-name: fadeIn;
+            animation-duration: 7s;
+        }
+        p {
+            animation-name: slideIn;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes changeColor {
+            0% {background-color: lightgray;}
+            25% {background-color: lightblue;}
+            50% {background-color: lightgreen;}
+            75% {background-color: lightpink;}
+            100% {background-color: lightgray;}
+        }
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        @keyframes slideIn {
+            0% {transform: translateX(-100%);}
+            100% {transform: translateX(0);}
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animation Example</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus obcaecati eligendi labore a excepturi amet 
+        molestias officiis laudantium error, ipsa soluta saepe adipisci impedit libero blanditiis molestiae in dolores porro.</p>
+</body>
+</html>

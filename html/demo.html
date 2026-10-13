@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Employee Management</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #f1f1f1;
+            color: #333333;
+        }
+
+        .header {
+            text-align: left;
+            padding: 40px 60px 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #333333;
+        }
+
+        .header p {
+            margin-top: 10px;
+            color: #777777;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+
+            border-top: 6px solid #666666;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.10);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 22px;
+            color: #444444;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #bdbdbd;
+            border-radius: 7px;
+
+            font-size: 14px;
+            outline: none;
+
+            transition: 0.3s;
+
+            background-color: #f7f7f7;
+            color: #333333;
+        }
+
+        input:focus {
+            background-color: #ffffff;
+            border-color: #555555;
+
+            box-shadow:
+                0 0 0 3px rgba(80, 80, 80, 0.12);
+        }
+
+        input:hover {
+            border-color: #888888;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #555555;
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #333333;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.20);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: auto;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #777777;
+
+            font-size: 14px;
+
+            border-top: 1px solid #d0d0d0;
+
+            background: #e7e7e7;
+        }
+
+        @media (max-width: 1100px) {
+
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .container {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+
+            .header {
+                padding: 30px 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="header">
+
+        <h1>Employee Management System</h1>
+
+        <p>
+            Manage employees easily using the options below
+        </p>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="card add-card">
+
+            <h2>Add New Employee</h2>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label>Employee Name</label>
+
+                    <input type="text" name="name" placeholder="Enter employee name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Salary</label>
+
+                    <input type="number" name="salary" placeholder="Enter salary">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Department</label>
+
+                    <input type="text" name="department" placeholder="Enter department">
+
+                </div>
+
+
+                <button type="submit" class="add-button">Add Employee</button>
+
+            </form>
+
+        </div>
+
+
+        <div class="card get-card">
+
+            <h2>Get Employee</h2>
+
+            <form>
+
+                <div class="form-group full">
+
+                    <label>Employee ID</label>
+
+                    <input type="number" name="id" placeholder="Enter employee ID">
+
+                </div>
+
+
+                <button type="submit" class="get-button">
+
+                    Get Employee
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="card update-card">
+
+            <h2>Update Employee</h2>
+
+            <form>
+
+                <div class="form-group full">
+
+                    <label>Employee ID</label>
+
+                    <input type="number" name="id" placeholder="Enter employee ID">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>New Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter new name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>New Salary</label>
+
+                    <input type="number" name="salary" placeholder="Enter new salary">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>New Department</label>
+
+                    <input type="text" name="department" placeholder="Enter new department">
+
+                </div>
+
+
+                <button type="submit" class="update-button">Update Employee</button>
+
+            </form>
+
+        </div>
+
+
+        <div class="card delete-card">
+
+            <h2>Delete Employee</h2>
+
+            <form>
+
+                <div class="form-group full">
+
+                    <label>Employee ID</label>
+
+                    <input type="number" name="id" placeholder="Enter employee ID">
+
+                </div>
+
+
+                <button type="submit" class="delete-button">Delete Employee</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <footer>Employee Management System © 2026</footer>
+
+
+</body>
+
+</html>
